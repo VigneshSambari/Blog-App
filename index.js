@@ -13,9 +13,14 @@ connection.once("open",()=>{
 });
 
 //middlewares
+app.use("/uploads",express.static("uploads"));
 app.use(express.json());
 const userRoute=require('./routes/user.js');
 app.use("/user",userRoute);
+const profileRoute=require('./routes/profile.js');
+app.use("/profile",profileRoute);
+const blogRoute=require('./routes/blogpost.js');
+app.use("/blogpost",blogRoute);
 
 app.route("/").get((req,res)=>{res.json("api02")});
-app.listen(Port,()=>console.log(`Port  ${Port}`)); 
+app.listen(Port,"0.0.0.0",()=>console.log(`Port  ${Port}`)); 
