@@ -8,7 +8,7 @@ mongoose.connect("mongodb+srv://bloguser:vicky1234@cluster0.7ngse.mongodb.net/bl
 }
 );
 const connection=mongoose.connection;
-connection.once("open",()=>{
+connection.once("open",()=>{-
     console.log("Connected to mongodb");
 });
 
